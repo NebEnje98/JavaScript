@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +10$ shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="handleCostKeyDown(event);">
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <input placeholder="Type something" onkeyup="handleOnKeyUp(event);">
+    <p class="js-copy"></p>
+
+    <script>
+      String(25);
+      console.log('25' - 5); // only when adding (+) JavaScript converts to string, in other situations (-,*,/) JavaScript converts to number
+      console.log('25' + 5);
+
+      /*  window object represents the browser and everything in it
+      window.document
+      window.console.log('window');
+      window.alert
+      */
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+        if (buttonElement.innerText === 'Subscribe') { // innerText returns only text without blank spaces
+          buttonElement.innerHTML = 'Subscribed';
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value); // Number converts string to number
+        if (cost < 40) {
+          cost *= 100;
+          cost += 1000;
+        }
+        cost /= 100;
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
+
+      function handleCostKeyDown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      function handleOnKeyUp(event) {
+        document.querySelector('.js-copy').innerHTML += event.key;
+      }
+    </script>
+  </body>
+</html>

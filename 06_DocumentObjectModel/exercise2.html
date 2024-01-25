@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 DOM</title>
+</head>
+<body>
+  <button onclick="guessSide('heads');">heads</button>
+  <button onclick="guessSide('tails')">tails</button>
+  <p class="js-guess"></p>
+
+  <script>
+
+    function guessSide(side) {
+      if (side === 'heads') {
+        document.querySelector('.js-guess').innerHTML = `You choose: ${side}.`
+      } else {
+        document.querySelector('.js-guess').innerHTML = `You choose: ${side}.`
+      }
+    }
+  </script>
+</body>
+</html>
