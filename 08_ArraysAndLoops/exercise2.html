@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 - Arrays and Loops</title>
+</head>
+<body>
+  
+  <script>
+
+    function searchArray(array) {
+      let index = -1;
+
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'search') {
+          index = i;
+          break;
+        }
+      }
+
+      return index;
+    }
+
+    console.log(searchArray(['hello', 'world', 'search', 'good']));
+    console.log(searchArray(['not', 'found']));
+
+    console.log(searchArray(['hello', 'world', 'search', 'good', 'search']));
+
+    function findIndex(array, word) {
+      let index = -1;
+
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          index = i;
+          break;
+        }
+      }
+
+      return index;
+    }
+
+    console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+    console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+    function removeEgg(foods) {
+      const newFoods = [];
+
+      for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg') {
+          continue;
+        }
+        newFoods.push(foods[i]);
+      }
+
+      return newFoods;
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    function removeEggV2(foods) {
+      const newFoods = [];
+      let eggCount = 0;
+
+      for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg' && eggCount < 2) {
+          eggCount++;
+          continue;
+        }
+        newFoods.push(foods[i]);
+      }
+
+      return newFoods;
+    }
+
+    console.log(removeEggV2(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    function removeEggV3(foods) {
+      const newFoods = [];
+      let eggCount = 0;
+      foods.reverse();
+
+      for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg' && eggCount < 2) {
+          eggCount++;
+          continue;
+        }
+        newFoods.push(foods[i]);
+      }
+
+      newFoods.reverse();
+      return newFoods;
+    }
+
+    console.log(removeEggV3(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    function doFizzBuzz() {
+
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log('FizzBuzz');
+        } else if (i % 3 === 0) {
+          console.log('Fizz');
+        } else if (i % 5 === 0) {
+          console.log('Buzz');
+        } else {
+          console.log(i);
+        }
+      }
+    }
+
+    doFizzBuzz();
+
+    function unique(array) {
+      const uniqueArray = [];
+
+      for (let i = 0; i < array.length; i++) {
+        const index = findIndex(uniqueArray, array[i]);
+        if (index === -1) {
+          uniqueArray.push(array[i]);
+        }
+      }
+
+      return uniqueArray;
+    }
+
+    console.log(unique(['green', 'red', 'blue', 'red']));
+    console.log(unique(['red', 'green', 'red', 'green']));
+
+  </script>
+</body>
+</html>
