@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1</title>
+
+  <link rel="stylesheet" href="styles/exercise1.css">
+</head>
+<body>
+  <p>
+    <button class="amazon-button">Add to Cart</button>
+  </p>
+  <p>
+    <button class="uber-request-button">Request now</button>
+    <button class="uber-schedule-button">Schedule for later</button>
+  </p>
+  <p>
+    <button class="js-button">Test</button>
+  </p>
+
+  <p>
+    <button class="js-gaming-button toggle-button" onclick="toggleButton('.js-gaming-button');">Gaming</button>
+    <button class="js-music-button toggle-button" onclick="toggleButton('.js-music-button');">Music</button>
+    <button class="js-tech-button toggle-button" onclick="toggleButton('.js-tech-button')">Tech</button>
+  </p>
+
+  <p>
+    <input class="cost-input" placeholder="Enter cost">
+    <button class="calculate-button" onclick="calculateFullPrice()">Calculate</button>
+  </p>
+  <p class="cost-message"></p>
+
+  <script src="scripts/exercise1.js"></script>
+</body>
+</html>
