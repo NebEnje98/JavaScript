@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    
+    <script>
+      // Hoisting we can call function before it is implemented in code
+      // If we define function using variable, hoisting is not possible
+      function greeting() {
+        console.log('Hello');
+      }
+
+      greeting();
+
+      const num = 2;
+      const function1 = function () {
+        console.log('Hello2');
+      };
+
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      const object1 = {
+        num : 2,
+        fun : function () {
+          console.log('Hello3');
+        }
+      };
+
+      object1.fun();
+
+      function display(param) {
+        console.log(param);
+      }
+
+      display(2);
+
+      // Passing function in another function
+      function run(param) {
+        param();
+      }
+
+      // Function that is provided to other function is called callback
+      run(function(){
+        console.log('Hello4');
+      });
+
+      // Calls function when 3 seconds pass
+      setTimeout(function () {
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+
+      // Code bellow will be executed first, PC won`t wait for 3 seconds to pass. Asynchronous code.
+      console.log('next line');
+
+      // Runs the function every 3 seconds
+      /*setInterval(function () {
+        console.log('interval');
+      }, 3000);*/
+
+      console.log('next line 2');
+
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach(function (value, index) {
+        if (value === 'wash dishes') {
+          return; // In for each it behaves as continue
+        }
+        // If break is needed it is better to use regular for loop
+        console.log(index);
+        console.log(value);
+      });
+
+    </script>
+  </body>
+</html>
