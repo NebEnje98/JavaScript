@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise for Advanced Functions</title>
+</head>
+<body>
+
+  <button class="js-start-button" onclick="startButton();">Start</button>
+
+  <p></p>
+
+  <button onclick="addToCart();">Add to cart</button>
+  <p class="js-add-message"></p>
+  
+  <script>
+
+    const add = function () {
+      console.log(2+3);
+    }
+
+    add();
+    add();
+
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(function () {console.log('12b')});
+    runTwice(add);
+
+    function startButton() {
+      document.querySelector('.js-start-button').innerHTML = 'Loading...';
+      setTimeout(function () {
+        document.querySelector('.js-start-button').innerHTML = 'Finished!';
+      }, 1000);
+    }
+
+    let timeoutIndex;
+    let isInTimeout = false;
+
+    function addToCart() {
+      if (isInTimeout) {
+        clearTimeout(timeoutIndex);
+      }
+      document.querySelector('.js-add-message').innerHTML = 'Added';
+      timeoutIndex = setTimeout(function () {
+        document.querySelector('.js-add-message').innerHTML = '';
+        isInTimeout = false;
+      }, 2000);
+      isInTimeout = true;
+    }
+  </script>
+</body>
+</html>
