@@ -1,0 +1,60 @@
+body {
+  background-color: rgb(203, 252, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.stopwatch-container {
+  font-family: Protest Guerrilla, Arial;
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+.stopwatch-background-img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.stopwatch-time {
+  position: absolute;
+  left: 20px;
+  top: 170px;
+  color: white;
+  font-size: 60px;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  right: 10px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stopwatch-button {
+  font-family: Protest Guerrilla, Arial;
+  background-color: inherit;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.35s;
+}
+
+.stopwatch-button:hover {
+  opacity: 0.7;
+}
