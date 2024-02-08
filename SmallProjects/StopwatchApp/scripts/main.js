@@ -4,6 +4,16 @@ let timeInSeconds = 0;
 let timeInMilliseconds = 0;
 let isPaused = false;
 
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 's') {
+    start();
+  } else if (event.key === 'p') {
+    pause();
+  } else if (event.key === 'r') {
+    reset();
+  }
+});
+
 document.querySelector('.js-start-button').
   addEventListener('click', () => start());
 
