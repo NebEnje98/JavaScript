@@ -17,6 +17,17 @@ body {
   position: relative;
 }
 
+.stopwatch-title {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 10px;
+  height: 30px;
+  font-size: 28px;
+  text-align: center;
+  color: white;
+}
+
 .stopwatch-background-img {
   width: 400px;
   height: 400px;
@@ -27,7 +38,7 @@ body {
 
 .stopwatch-time {
   position: absolute;
-  left: 20px;
+  left: 15px;
   top: 170px;
   color: white;
   font-size: 60px;
@@ -56,5 +67,13 @@ body {
 }
 
 .stopwatch-button:hover {
+  opacity: 0.8;
+}
+
+.transparent-time {
   opacity: 0.7;
+}
+
+.transparent-button {
+  opacity: 0.6;
 }

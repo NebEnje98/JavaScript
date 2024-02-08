@@ -26,10 +26,14 @@ function pause() {
   if (isPaused) {
     start();
     isPaused = false;
+    document.querySelector('.js-pause-button').
+      classList.remove('transparent-button');
   } else if (isStarted) {
     clearInterval(intervalIndex);
     isStarted = false;
     isPaused = true;
+    document.querySelector('.js-pause-button').
+      classList.add('transparent-button');
   }
 }
 
@@ -37,6 +41,9 @@ function reset() {
   parseTime(0, 0);
   timeInSeconds = 0;
   timeInMilliseconds = 0;
+  isPaused = false;
+  document.querySelector('.js-pause-button').
+      classList.remove('transparent-button');
 }
 
 function increaseTime() {
@@ -59,6 +66,12 @@ function increaseTime() {
 
 function parseTime(minutes, seconds) {
   const divElement = document.querySelector('.js-stopwatch-time');
+
+  if (minutes === 0 & seconds === 0) {
+    divElement.classList.add('transparent-time');
+  } else {
+    divElement.classList.remove('transparent-time');
+  }
   
   if (minutes < 10 & seconds < 10) {
     divElement.innerHTML = '0' + String(minutes) + ':0' + String(seconds);
