@@ -2,10 +2,14 @@ let playerTurn = 0;
 let isPlayable = [];
 let result = [];
 
+const playerTurnElement = document.querySelector('.js-player-turn');
+
 for (let i = 0; i < 9; i++) {
   isPlayable.push(true);
   result.push('');
 }
+
+playerTurnElement.innerHTML = 'Player X to play.'
 
 document.querySelector('.js-play-field1')
   .addEventListener('click', () => {
@@ -58,11 +62,13 @@ function playTurn(position) {
     playerTurn = 1;
     isPlayable[position] = false;
     result[position] = 'X';
+    playerTurnElement.innerHTML = 'Player O to play.'
   } else if (isPlayable[position]) {
     document.querySelector(`.js-play-field${position+1}`).innerHTML = 'O';
     playerTurn = 0;
     isPlayable[position] = false;
     result[position] = 'O';
+    playerTurnElement.innerHTML = 'Player X to play.'
   }
 
   setTimeout(() => {
@@ -116,5 +122,6 @@ function resetPlay() {
     isPlayable.push(true);
     result.push('');
     document.querySelector(`.js-play-field${i+1}`).innerHTML = '';
+    playerTurnElement.innerHTML = 'Player X to play.'
   }
 }

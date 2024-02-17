@@ -1,5 +1,6 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url('../img/tictactoe-background.jpg');
@@ -8,6 +9,18 @@ body {
   top: 0px;
   right: 0px;
   left: 0px;
+}
+
+.player-turn {
+  background-color: whitesmoke;
+  opacity: 0.85;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(92, 92, 92);
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 3px rgb(255, 255, 255);
 }
 
 .tictactoe-board {
