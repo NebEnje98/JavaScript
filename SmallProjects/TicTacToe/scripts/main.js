@@ -111,6 +111,19 @@ function checkWin() {
     winnerText = '';
     isWon = false;
   }
+
+  let isDraw = true;
+  for (let i = 0; i < 9; i++) {
+    if (result[i] === '') {
+      isDraw = false;
+    }
+  }
+
+  if (isDraw) {
+    alert('Draw.');
+    resetPlay();
+    winnerText = '';
+  }
 }
 
 function resetPlay() {
