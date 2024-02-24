@@ -76,19 +76,19 @@ function updateCartQuantity() {
 }
 
 function showAddedPopup(productId) {
-  document.querySelector(`.js-added-to-cart-${productId}`).
-    classList.add('added-to-cart-show');
+  document.querySelector(`.js-added-to-cart-${productId}`)
+    .classList.add('added-to-cart-show');
   
   if (timeoutIndex) {
     clearTimeout(timeoutIndex);
     timeoutIndex = setTimeout(() => {
-      document.querySelector(`.js-added-to-cart-${productId}`).
-        classList.remove('added-to-cart-show');
+      document.querySelector(`.js-added-to-cart-${productId}`)
+        .classList.remove('added-to-cart-show');
     }, 2000)
   } else {
     timeoutIndex = setTimeout(() => {
-      document.querySelector(`.js-added-to-cart-${productId}`).
-        classList.remove('added-to-cart-show');
+      document.querySelector(`.js-added-to-cart-${productId}`)
+        .classList.remove('added-to-cart-show');
     }, 2000)
   }
 }
